@@ -25,7 +25,6 @@ const userRouter = require("./routes/user.js");
 
 
 
-
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
 app.use(express.urlencoded({extended:true}));
@@ -48,6 +47,10 @@ main().then(()=>{
 async function main(){
     await mongoose.connect(dburl);
 };
+
+
+
+
 const store =  MongoStore.create({
     mongoUrl:dburl,
     crypto:{
