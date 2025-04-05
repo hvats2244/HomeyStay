@@ -5,7 +5,7 @@
       <button>Create New listings</button>
     </form> -->
     <style>
-      #filters{
+     #filters{
         display:flex;
         flex-wrap: wrap;
         align-items:center;
@@ -31,65 +31,191 @@
         border-radius:1rem;
         height:3.25rem;
         padding:1rem;
-        margin-left:2rem;
-        display: flex;
+        margin-left:20rem;
+        display:flex;
         align-items:center;
+        width:16rem;
       }
+
+      @media (max-width: 1300px) {
+  .tax-toggle {
+   display:none;
+  }
+}
+      
+      .carousel{
+        left:-0.5rem;
+        width:39rem;
+
+      
+       
+      }
+      
+
+      .carousel-inner{
+           
+            height:5rem;
+            
+        }
+        .icon-box {
+            text-align: center;
+
+            width: 5%; /* 5 icons in a row */
+            
+        }
+        .icon-box i {
+            font-size:1rem; /* Icon size */
+             /* Blue color */
+        }
+        .icon-text {
+            font-size: 16px; /* Text size */
+            margin-top: 5px;
+            color: #333;
+        }
+        .carousel-control-prev {
+            left: -3.8rem; /* Move completely to the left */
+        }
+        .carousel-control-next {
+            right: -2.0rem; /* Move completely to the right */
+        }
+         .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+          background-color: rgb(63, 59, 59); /* Add a background color behind the icon */
+          border-radius: 50%;     /* Optional: make it circular */
+          background-size: 60% 60%;
+          background-repeat: no-repeat;
+           background-position: center;
+}
+       
+     
+        
+        /* Responsive Design */
+        @media (max-width: 768px) { 
+            .icon-box {
+                width: 30%; /* 3 icons per row for tablets */
+            }
+            .carousel-control-prev {
+                left: 0; /* Keep inside screen */
+            }
+            .carousel-control-next {
+                right: 0; /* Keep inside screen */
+            }
+        }
+        
+        @media (max-width: 576px) { 
+            .icon-box {
+                width: 1.2rem; /* 2 icons per row for mobile */
+            }
+            .carousel-control-prev, .carousel-control-next {
+                width: 10%; /* Make buttons larger for easy click */
+            }
+        }
+  
+
     </style>
 
-    <div id="filters" class="">
-     <div class="filter">
-      <div><i class="fa-solid fa-fire-flame-curved"></i></div>
+<div id="filters" class="">
+<div id="carouselExample" class="carousel slide ">
+  <div class="carousel-inner">
+    
+    <!-- First Slide -->
+    <div class="carousel-item active">
+      <div class="d-flex justify-content-around">
+        <div class="icon-box filter">
+          <div><i class="fa-solid fa-fire-flame-curved"></i></div>
       <p> Trending</p>
-     </div>
-     <div class="filter">
-      <div><i class="fa-solid fa-bed"></i></div>
+        </div>
+        <div class="icon-box filter">
+          <div><i class="fa-solid fa-bed"></i></div>
       <p>Rooms</p>
-     </div>
-     <div class="filter">
-      <div><i class="fa-solid fa-mountain-city"></i></div>
-      <p> Iconic Cities</p>
-     </div>
-     <div class="filter">
-      <div><i class="fa-solid fa-mountain-sun"></i></div>
-      <p>Mountains</p>
-     </div>
-     <div class="filter">
-      <div><i class="fa-brands fa-fort-awesome"></i></div>
-      <p>Castles</p>
-     </div>
-     <div class="filter">
-      <div><i class="fa-solid fa-person-swimming"></i></div>
-      <p>Amazing Pools</p>
-     </div>
-     <div class="filter">
-      <div><i class="fa-solid fa-campground"></i></div>
+        </div>
+        <div class="icon-box filter">
+          <div><i class="fa-solid fa-mountain-city"></i></div>
+          <p> Iconic Cities</p>
+        </div>
+        <div class="icon-box filter">
+          <div><i class="fa-solid fa-mountain-sun"></i></div>
+      <p>Mount</p>
+        </div>
+        <div class="icon-box filter">
+          <div><i class="fa-brands fa-fort-awesome"></i></div>
+          <p>Castles</p>
+        </div>
+        <div class="icon-box filter">
+          <div><i class="fa-solid fa-person-swimming"></i></div>
+          <p>Amazing Pools</p>
+        </div>
+        <div class="icon-box filter">
+          <div><i class="fa-solid fa-campground"></i></div>
       <p>Camping</p>
-     </div>
-     <div class="filter">
-      <div><i class="fa-solid fa-tractor"></i>></i></div>
-      <p>Farms</p>
-     </div>
-     <div class="filter">
-      <div><i class="fa-solid fa-snowflake"></i></div>
-      <p>Arctic</p>
-     </div>
-     <div class="filter">
-      <div><i class="fa-solid fa-igloo"></i></div>
+        </div>
+        <div class="icon-box filter">
+          <div><i class="fa-solid fa-tractor"></i></i></div>
+          <p>Farms</p>
+        </div>
+       
+      </div>
+    </div>
+    
+    <!-- Second Slide -->
+    <div class="carousel-item ">
+      <div class="d-flex justify-content-around">
+        <div class="icon-box filter">
+          <div><i class="fa-solid fa-snowflake"></i></div>
+          <p>Arctic</p>
+        
+        </div>
+        <div class="icon-box filter">
+          <div><i class="fa-solid fa-igloo"></i></div>
       <p>Domes</p>
-     </div>
-     <div class="filter">
-      <div><i class="fa-solid fa-sailboat"></i></div>
-      <p>Boats</p>
-     </div>
+        </div>
+        <div class="icon-box filter">
+          <div><i class="fa-solid fa-sailboat"></i></div>
+          <p>Boats</p>
+        </div>
+        <div class="icon-box filter">
+          <div><i class="fa-solid fa-snowflake"></i></div>
+          <p>Arctic</p>
+        </div>
+        <div class="icon-box filter">
+          <div><i class="fa-solid fa-tractor"></i></i></div>
+          <p>Farms</p>
+        </div>
+        <div class="icon-box filter">
+          <div><i class="fa-solid fa-person-swimming"></i></div>
+          <p>Amazing Pools</p>
+        </div>
+        <div class="icon-box filter">
+          <div><i class="fa-solid fa-sailboat"></i></div>
+          <p>Boats</p>
+        </div>
+        <div class="icon-box filter">
+          <div><i class="fa-solid fa-igloo"></i></div>
+      <p>Domes</p>
+        </div>
+      </div>
+    </div>
 
-    <div class="tax-toggle">
+  </div>
+
+  <!-- Navigation Buttons -->
+  <button class="carousel-control-prev  " type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+    <span class="visually-hidden ">Previous</span>
+  </button>
+  <button class="carousel-control-next " type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+    <div class="tax-toggle ">
       <div class="form-check-reverse form-switch">
         <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
         <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>
       </div>
     </div>
-
     </div>
    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
     <% for(let listing of allListings) { %>
