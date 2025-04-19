@@ -29,6 +29,16 @@ body{
 color:#222222 !important;
 }
 
+@media(max-width:767px){
+    .navbar-collapse{
+        background-color:azure;
+    }
+    .search{
+        display:none !important;
+        
+    }
+}
+
 /* footer */
 
 .f-info-links a{
