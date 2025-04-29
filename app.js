@@ -22,7 +22,7 @@ const User = require("./models/user.js");
 const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
-
+const wrapAsync = require("./utils/wrapAsync.js");
 
 
 app.set("view engine","ejs");
@@ -31,7 +31,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 app.engine('ejs', ejsmate);
 app.use(express.static(path.join(__dirname,"/public")))
-
+const Listing = require("./models/listing.js");
 
 
 // const MONGO_URL = 'mongodb://127.0.0.1:27017/wanderlust';
@@ -116,6 +116,26 @@ app.use("/listings",listingRouter);
 app.use("/listings/:id/reviews",reviewRouter);
 app.use("/",userRouter);
 
+
+app.get('/search',wrapAsync(async(req,res)=>{
+    const{title}=req.query;
+   
+    let listing =[];
+
+   
+    if(title){
+        listing=await Listing.find({title: { $regex: title, $options: 'i' }
+        }).populate({path:"review",populate:{path:"author",}}).populate("owner");
+
+    }
+    if(listing.length === 0){
+        req.flash("error","Listing you requested for does not exist!");
+        res.redirect("/listings");
+      }
+  
+   res.render("listings/search.ejs",{listing})
+  
+}))
 
 
 

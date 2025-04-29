@@ -32,8 +32,8 @@ padding:0.5rem 3rem 0.5rem 3rem;
         </div>
 
           <div class="navbar-nav ms-auto search">
-            <form class="d-flex" role="search">
-              <input class="form-control me-2 search-inp"  type="search" placeholder="Search destinations" >
+            <form  class="d-flex" role="search" action="/search" method="GET">
+              <input name="title" class="form-control me-2 search-inp"  type="text" placeholder="Search destinations" >
               <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
             </form>
           </div>
