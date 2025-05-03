@@ -92,4 +92,23 @@ module.exports.destroyListing = async (req,res)=>{
     req.flash("sucess","Listing Deleted!");
     res.redirect("/listings");
 };
-    
+  
+module.exports.search = async(req,res)=>{
+  const{title}=req.query;
+ 
+  let listing =[];
+
+ 
+  if(title){
+      listing=await Listing.find({title: { $regex: title, $options: 'i' }
+      }).populate({path:"review",populate:{path:"author",}}).populate("owner");
+
+  }
+  if(listing.length === 0){
+      req.flash("error","Listing you requested for does not exist!");
+      res.redirect("/listings");
+    }
+
+ res.render("listings/search.ejs",{listing})
+
+}

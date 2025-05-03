@@ -37,7 +37,7 @@ module.exports.renderLoginForm = (req,res)=>{
 module.exports.login = async(req,res)=>{ //passport.authenticate ek middelware jo authenticate kra h ki user phela sa exits krta h ya nhi.
     // phela ya middelware run hoga then ya succesful hu then async(req,res)pr jaya ga.
                                                                                                                        
-     req.flash("sucess","welcome back to Wanderlust!");
+     req.flash("sucess","welcome back to HomeyStay!");
     
      let redirectUrl = res.locals.redirectUrl || "/listings";
      res.redirect(redirectUrl);

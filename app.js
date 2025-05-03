@@ -23,7 +23,7 @@ const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 const wrapAsync = require("./utils/wrapAsync.js");
-
+const listingController = require("./controller/listing.js");
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
@@ -115,28 +115,11 @@ app.use((req,res,next)=>{
 app.use("/listings",listingRouter);
 app.use("/listings/:id/reviews",reviewRouter);
 app.use("/",userRouter);
+app.get('/search',wrapAsync(listingController.search));
 
-
-app.get('/search',wrapAsync(async(req,res)=>{
-    const{title}=req.query;
-   
-    let listing =[];
-
-   
-    if(title){
-        listing=await Listing.find({title: { $regex: title, $options: 'i' }
-        }).populate({path:"review",populate:{path:"author",}}).populate("owner");
-
-    }
-    if(listing.length === 0){
-        req.flash("error","Listing you requested for does not exist!");
-        res.redirect("/listings");
-      }
-  
-   res.render("listings/search.ejs",{listing})
-  
+app.get("/icons",wrapAsync(async(req,res)=>{
+    res.render("listings/icons.ejs")
 }))
-
 
 
 
